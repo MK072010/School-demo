@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Samrath Public School, Jaipur</title>
+<meta name="description" content="Samrath Public School, Jaipur — CBSE school offering Nursery to Grade XII. Admissions open for session 2026-27.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600&family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,440;0,9..144,560;1,9..144,400;1,9..144,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --blue: #173A66;
+    --blue-dark: #0F2847;
+    --blue-mid: #2A4E7C;
+    --white: #FFFFFF;
+    --warm-white: #FAF8F4;
+    --grey-bg: #F2F3F5;
+    --border: #DEE2E7;
+    --text: #232830;
+    --text-soft: #5B6472;
+    --gold: #AD8A3E;
+    --gold-soft: #C9A85E;
+    --radius: 6px;
+    --shadow-sm: 0 1px 3px rgba(15,40,71,0.08);
+    --shadow-md: 0 6px 20px -8px rgba(15,40,71,0.16);
+    --space-lg: 140px;
+    --space-md: 96px;
+    --space-sm: 72px;
+    --space-lg-mob: 88px;
+    --space-md-mob: 72px;
+    --space-sm-mob: 56px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;scroll-padding-top:110px;}
+  body{
+    font-family:'Plus Jakarta Sans', sans-serif;
+    color:var(--text);
+    background:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  button{font-family:inherit;cursor:pointer;}
+  h1,h2,h3,h4{
+    font-family:'Fraunces', Georgia, serif;
+    font-optical-sizing:auto;
+    color:var(--blue-dark);
+    line-height:1.14;
+    font-weight:440;
+    letter-spacing:-0.005em;
+  }
+  h1 em, h2 em, h3 em{font-style:italic;font-weight:400;color:var(--gold);}
+  h1 strong, h2 strong, h3 strong{font-weight:560;}
+  h3, h4{font-family:'Plus Jakarta Sans', sans-serif;font-weight:700;letter-spacing:-0.01em;}
+  p{color:var(--text-soft);line-height:1.75;font-size:16px;}
+  p strong{color:var(--text);font-weight:700;}
+  p em{font-style:italic;color:var(--text);}
+  .measure{max-width:640px;}
+  .container{max-width:1180px;margin:0 auto;padding:0 24px;}
+  @media (max-width:768px){.container{padding:0 20px;}}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:2px;}
+
+  .eyebrow{
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:14px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .eyebrow::before{content:"";width:16px;height:1px;background:var(--gold);display:inline-block;}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 24px;font-size:14.5px;font-weight:600;letter-spacing:0.01em;
+    border-radius:var(--radius);
+    transition:background .25s ease, border-color .25s ease, color .25s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--blue);color:var(--white);border:1px solid var(--blue);}
+  .btn-primary:hover{background:var(--blue-dark);border-color:var(--blue-dark);}
+  .btn-secondary{background:var(--white);color:var(--blue);border:1px solid var(--blue);}
+  .btn-secondary:hover{background:var(--grey-bg);}
+  .btn-ghost-light{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.55);}
+  .btn-ghost-light:hover{background:rgba(255,255,255,0.1);}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .5s ease, transform .5s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none;}html{scroll-behavior:auto;}}
+
+  /* Photo placeholder pattern */
+  .photo-slot{position:relative;background:var(--grey-bg);border:1px solid var(--border);overflow:hidden;}
+  .photo-slot img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .photo-slot img.broken{display:none;}
+  .photo-slot.missing::after{
+    content:attr(data-caption);
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;padding:16px;
+    font-size:12px;color:var(--text-soft);
+    background:
+      repeating-linear-gradient(45deg, var(--grey-bg), var(--grey-bg) 10px, #E9EBEE 10px, #E9EBEE 20px);
+  }
+  .photo-slot:hover img{transform:scale(1.03);}
+
+  section{position:relative;scroll-margin-top:110px;}
+  .section-pad{padding:var(--space-md) 0;}
+  @media (max-width:768px){.section-pad{padding:var(--space-md-mob) 0;}}
+  .section-pad.tight{padding:var(--space-sm) 0;}
+  @media (max-width:768px){.section-pad.tight{padding:var(--space-sm-mob) 0;}}
+  .section-pad.large{padding:var(--space-lg) 0;}
+  @media (max-width:768px){.section-pad.large{padding:var(--space-lg-mob) 0;}}
+
+  /* ============ HEADER ============ */
+  header{
+    position:sticky;top:0;z-index:1000;
+    background:var(--white);
+    border-bottom:1px solid transparent;
+    transition:border-color .3s ease, box-shadow .3s ease;
+  }
+  header.scrolled{border-bottom-color:var(--border);box-shadow:var(--shadow-sm);}
+  .topbar{
+    background:var(--blue-dark);
+    color:rgba(255,255,255,0.85);
+    font-size:12.5px;
+  }
+  .topbar .container{display:flex;justify-content:space-between;align-items:center;padding-top:7px;padding-bottom:7px;}
+  .topbar a{color:rgba(255,255,255,0.85);}
+  .topbar a:hover{color:var(--gold-soft);}
+  .topbar .tb-left{display:flex;gap:20px;align-items:center;}
+  nav.container{display:flex;align-items:center;justify-content:space-between;padding-top:14px;padding-bottom:14px;}
+  .logo{display:flex;align-items:center;gap:10px;}
+  .logo-mark{
+    width:38px;height:38px;background:var(--blue);color:var(--white);
+    border-radius:4px;display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:16px;flex-shrink:0;
+  }
+  .logo-text{display:flex;flex-direction:column;line-height:1.15;}
+  .logo .l1{font-size:16.5px;font-weight:800;color:var(--blue-dark);letter-spacing:0.01em;}
+  .logo .l2{font-size:11px;color:var(--text-soft);font-weight:500;}
+  .nav-links{display:flex;align-items:center;gap:26px;}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--text);padding:6px 0;position:relative;transition:color .2s;}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);transition:width .25s ease;}
+  .nav-links a:hover{color:var(--blue);}
+  .nav-links a:hover::after{width:100%;}
+  .nav-cta{display:flex;align-items:center;gap:16px;}
+  .hamburger{display:none;flex-direction:column;gap:5px;width:24px;z-index:1200;}
+  .hamburger span{display:block;height:2px;width:100%;background:var(--blue-dark);transition:all .3s ease;}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .hamburger.open span:nth-child(2){opacity:0;}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+  .mobile-menu{
+    position:fixed;inset:0;background:var(--white);z-index:1100;
+    display:flex;flex-direction:column;padding:90px 28px 40px;
+    transform:translateX(100%);transition:transform .35s ease;
+    overflow-y:auto;
+  }
+  .mobile-menu.open{transform:translateX(0);}
+  .mobile-menu a{font-size:19px;font-weight:600;color:var(--blue-dark);padding:14px 0;border-bottom:1px solid var(--border);}
+  .mobile-menu .mm-call{
+    margin-top:22px;font-size:16px;font-weight:700;color:var(--blue);
+    display:flex;align-items:center;gap:8px;
+  }
+  .mobile-menu .btn{margin-top:22px;align-self:flex-start;}
+  @media (max-width:980px){
+    .nav-links{display:none;}
+    .nav-cta .btn{display:none;}
+    .hamburger{display:flex;}
+    .topbar .tb-left span:last-child{display:none;}
+  }
+
+  /* ============ HERO ============ */
+  .hero{background:var(--warm-white);}
+  .hero-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;
+    padding:56px 0 44px;
+  }
+  .hero-eyebrow{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:inline-flex;align-items:center;gap:8px;}
+  .hero-eyebrow::before{content:"";width:16px;height:1px;background:var(--gold);display:inline-block;}
+  .hero h1{font-size:clamp(32px,4.6vw,50px);line-height:1.12;color:var(--blue-dark);margin-bottom:20px;max-width:560px;}
+  .hero-desc{font-size:16.5px;line-height:1.7;color:var(--text-soft);max-width:580px;margin-bottom:30px;}
+  .hero-buttons{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px;}
+  .hero-meta{display:flex;gap:28px;flex-wrap:wrap;}
+  .hero-meta div{font-size:13px;color:var(--text-soft);display:flex;align-items:center;gap:8px;}
+  .hero-meta svg{width:16px;height:16px;color:var(--gold);flex-shrink:0;}
+  .hero-photo{aspect-ratio:5/4;border-radius:var(--radius);}
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:36px;padding:36px 0 44px;}
+    .hero-photo{order:-1;aspect-ratio:16/10;}
+  }
+
+  /* ============ ABOUT (image left / text right) ============ */
+  .about{background:var(--white);padding-top:52px;}
+  .about-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:56px;align-items:center;}
+  .about-photo{aspect-ratio:4/5;}
+  .about h2{font-size:clamp(30px,3.6vw,44px);line-height:1.15;margin-bottom:22px;max-width:520px;}
+  .about p{font-size:16.5px;line-height:1.8;margin-bottom:16px;max-width:640px;}
+  .about-points{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px;}
+  .about-points div{display:flex;gap:10px;font-size:14px;color:var(--text);align-items:flex-start;}
+  .about-points svg{width:18px;height:18px;color:var(--gold);flex-shrink:0;margin-top:1px;}
+  @media (max-width:900px){
+    .about-grid{grid-template-columns:1fr;gap:32px;}
+    .about-photo{aspect-ratio:16/10;}
+    .about-points{grid-template-columns:1fr;}
+  }
+
+  /* ============ PRINCIPAL (text left / image right — variation) ============ */
+  .principal{background:var(--grey-bg);}
+  .principal-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:center;}
+  .principal h2{font-size:clamp(28px,3.2vw,38px);line-height:1.18;margin-bottom:22px;}
+  .principal-msg{
+    font-family:'Fraunces', Georgia, serif;
+    font-style:italic;font-weight:400;
+    font-size:clamp(18px,2vw,22px);
+    color:var(--blue-dark);line-height:1.55;
+    margin-bottom:26px;max-width:620px;
+    padding-left:26px;border-left:2px solid var(--gold);
+  }
+  .principal-msg em{color:var(--gold);font-style:italic;}
+  .principal-sig{padding-left:26px;}
+  .principal-sig::before{content:"";display:block;width:34px;height:1px;background:var(--gold-soft);margin-bottom:14px;}
+  .principal-sig .name{font-weight:700;color:var(--blue-dark);font-size:15.5px;font-family:'Plus Jakarta Sans',sans-serif;}
+  .principal-sig .role{font-size:13px;color:var(--text-soft);margin-top:2px;}
+  .principal-photo{aspect-ratio:3/4;max-width:320px;margin-left:auto;}
+  @media (max-width:900px){
+    .principal-grid{grid-template-columns:1fr;gap:28px;}
+    .principal-photo{order:-1;max-width:100%;aspect-ratio:16/10;margin-left:0;}
+  }
+
+  /* ============ WHY SAMRATH — simple list, not cards ============ */
+  .why{background:var(--white);}
+  .why-head{margin-bottom:36px;max-width:600px;}
+  .why-head h2{font-size:clamp(30px,3.6vw,44px);line-height:1.15;}
+  .why-list{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);}
+  .why-item{
+    display:flex;gap:16px;padding:26px 20px 26px 0;
+    border-bottom:1px solid var(--border);
+  }
+  .why-item:nth-child(3n+2), .why-item:nth-child(3n+3){padding-left:20px;}
+  .why-item .n{width:6px;min-width:6px;padding-top:6px;}
+  .why-item .n::before{content:"";display:block;width:6px;height:6px;border-radius:50%;background:var(--gold);}
+  .why-item h3{font-size:16px;font-weight:700;margin-bottom:4px;color:var(--blue-dark);}
+  .why-item p{font-size:13.5px;line-height:1.6;}
+  @media (max-width:900px){
+    .why-list{grid-template-columns:1fr 1fr;}
+    .why-item:nth-child(3n+2){padding-left:0;}
+    .why-item:nth-child(2n){padding-left:20px;}
+  }
+  @media (max-width:600px){
+    .why-list{grid-template-columns:1fr;}
+    .why-item, .why-item:nth-child(2n){padding-left:0;}
+  }
+
+  /* ============ ACADEMICS ============ */
+  .academics{background:var(--grey-bg);}
+  .academics-head{max-width:620px;margin-bottom:40px;}
+  .academics-head h2{font-size:clamp(30px,3.6vw,44px);line-height:1.15;margin-bottom:14px;}
+  .academic-rows{border-top:1px solid var(--border);}
+  .academic-row{
+    display:grid;grid-template-columns:200px 1fr 160px;gap:24px;
+    padding:26px 0;border-bottom:1px solid var(--border);align-items:center;
+  }
+  .academic-row h3{font-size:18px;margin-bottom:4px;}
+  .academic-row .stage-range{font-size:12.5px;color:var(--gold);font-weight:700;text-transform:uppercase;letter-spacing:0.04em;}
+  .academic-row p{font-size:14px;}
+  .academic-row a{font-size:13.5px;font-weight:700;color:var(--blue);display:inline-flex;align-items:center;gap:6px;}
+  .academic-row a:hover{color:var(--blue-dark);}
+  @media (max-width:768px){
+    .academic-row{grid-template-columns:1fr;gap:6px;}
+  }
+
+  /* ============ CAMPUS — editorial gallery, varied sizes ============ */
+  .campus{background:var(--white);}
+  .campus-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:32px;flex-wrap:wrap;}
+  .campus-head h2{font-size:clamp(30px,3.6vw,44px);line-height:1.15;}
+  .campus-head p{max-width:340px;font-size:14px;}
+  .campus-gallery{
+    display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:120px;gap:12px;
+  }
+  .campus-photo{position:relative;}
+  .campus-photo .cap{
+    position:absolute;left:0;right:0;bottom:0;padding:12px 14px;
+    background:linear-gradient(0deg, rgba(15,40,71,0.82), transparent);
+    color:#fff;font-size:13px;font-weight:600;
+  }
+  .g1{grid-column:1/4;grid-row:1/4;}
+  .g2{grid-column:4/7;grid-row:1/3;}
+  .g3{grid-column:4/5;grid-row:3/5;}
+  .g4{grid-column:5/7;grid-row:3/5;}
+  .g5{grid-column:1/3;grid-row:4/6;}
+  .g6{grid-column:3/4;grid-row:4/6;}
+  @media (max-width:900px){
+    .campus-gallery{grid-template-columns:1fr 1fr;grid-auto-rows:150px;}
+    .g1{grid-column:1/3;grid-row:1/2;}
+    .g2{grid-column:1/2;grid-row:2/3;}
+    .g3{grid-column:2/3;grid-row:2/3;}
+    .g4{grid-column:1/2;grid-row:3/4;}
+    .g5{grid-column:2/3;grid-row:3/4;}
+    .g6{grid-column:1/3;grid-row:4/5;}
+  }
+
+  /* ============ STUDENT LIFE — photography forward ============ */
+  .student-life{background:var(--grey-bg);}
+  .sl-head{max-width:620px;margin-bottom:32px;}
+  .sl-head h2{font-size:clamp(30px,3.6vw,44px);line-height:1.15;}
+  .sl-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;}
+  .sl-card .photo-slot{aspect-ratio:3/4;margin-bottom:10px;}
+  .sl-card h3{font-size:14.5px;font-weight:700;color:var(--blue-dark);}
+  @media (max-width:900px){.sl-grid{grid-template-columns:repeat(3,1fr);row-gap:24px;}}
+  @media (max-width:560px){.sl-grid{grid-template-columns:repeat(2,1fr);}}
+
+  /* ============ NOTICE BOARD ============ */
+  .notices{background:var(--white);}
+  .notice-panel{
+    background:var(--blue-dark);color:#fff;border-radius:var(--radius);
+    padding:36px 36px 20px;
+  }
+  .notice-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;flex-wrap:wrap;gap:10px;}
+  .notice-head h2{color:#fff;font-size:clamp(24px,2.6vw,32px);line-height:1.2;}
+  .notice-head .view-all{font-size:13.5px;font-weight:700;color:var(--gold-soft);display:inline-flex;align-items:center;gap:6px;}
+  .notice-list{margin-top:14px;}
+  .notice-item{
+    display:grid;grid-template-columns:72px 1fr;gap:20px;
+    padding:16px 0;border-top:1px solid rgba(255,255,255,0.12);
+  }
+  .notice-date{font-size:13px;font-weight:700;color:var(--gold-soft);line-height:1.3;}
+  .notice-date .day{font-size:20px;display:block;color:#fff;}
+  .notice-item h3{color:#fff;font-size:15px;font-weight:600;margin-bottom:3px;}
+  .notice-item p{font-size:13px;color:rgba(255,255,255,0.6);}
+  @media (max-width:600px){.notice-panel{padding:26px 20px 16px;}}
+
+  /* ============ AT A GLANCE ============ */
+  .glance{background:var(--grey-bg);}
+  .glance-note{font-size:12px;color:var(--text-soft);margin-bottom:24px;}
+  .glance-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .glance-item{padding:28px 20px;border-left:1px solid var(--border);}
+  .glance-item:first-child{border-left:none;}
+  .glance-item .num{font-family:'Fraunces',Georgia,serif;font-size:clamp(32px,3.4vw,44px);font-weight:500;color:var(--blue);line-height:1;margin-bottom:10px;letter-spacing:-0.01em;}
+  .glance-item .label{font-size:13px;color:var(--text-soft);}
+  @media (max-width:768px){
+    .glance-grid{grid-template-columns:1fr 1fr;}
+    .glance-item:nth-child(2n+1){border-left:none;}
+  }
+
+  /* ============ ADMISSIONS ============ */
+  .admissions{background:var(--blue-dark);color:#fff;}
+  .adm-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;}
+  .adm-grid h2{color:#fff;font-size:clamp(30px,3.6vw,42px);line-height:1.18;margin-bottom:16px;}
+  .adm-grid > div:first-child p{color:rgba(255,255,255,0.72);font-size:15px;max-width:420px;margin-bottom:26px;}
+  .adm-buttons{display:flex;gap:14px;flex-wrap:wrap;}
+  .adm-steps{display:flex;flex-direction:column;}
+  .adm-step{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,0.14);}
+  .adm-step:first-child{padding-top:0;}
+  .adm-step .n{font-size:15px;font-weight:800;color:var(--gold-soft);min-width:28px;}
+  .adm-step h4{color:#fff;font-size:15.5px;font-weight:700;margin-bottom:3px;}
+  .adm-step p{font-size:13.5px;color:rgba(255,255,255,0.62);}
+  @media (max-width:900px){.adm-grid{grid-template-columns:1fr;gap:34px;}}
+
+  /* ============ TESTIMONIALS ============ */
+  .testimonials{background:var(--white);}
+  .testi-head{margin-bottom:32px;max-width:560px;}
+  .testi-head h2{font-size:clamp(30px,3.6vw,44px);line-height:1.15;}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi-card{border:1px solid var(--border);border-radius:var(--radius);padding:26px;}
+  .testi-card p{font-size:14.5px;color:var(--text);margin-bottom:16px;}
+  .testi-attr{font-size:13px;color:var(--text-soft);font-weight:600;}
+  @media (max-width:900px){.testi-grid{grid-template-columns:1fr;}}
+
+  /* ============ CONTACT ============ */
+  .contact{background:var(--grey-bg);}
+  .contact-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:50px;}
+  .contact-info h2{font-size:clamp(28px,3.2vw,36px);line-height:1.18;margin-bottom:22px;}
+  .contact-block{margin-bottom:20px;font-size:14.5px;}
+  .contact-block .lbl{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--gold);margin-bottom:4px;}
+  .contact-block .val{color:var(--text);font-weight:600;}
+  .contact-block a.val{color:var(--blue);}
+  .contact-form{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:32px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+  .field{display:flex;flex-direction:column;gap:6px;}
+  .field.full{grid-column:1/-1;}
+  .field label{font-size:12.5px;font-weight:600;color:var(--text-soft);}
+  .field input, .field select, .field textarea{
+    border:1px solid var(--border);border-radius:4px;background:var(--white);
+    padding:10px 12px;font-family:inherit;font-size:14px;color:var(--text);
+    transition:border-color .2s;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{outline:none;border-color:var(--blue);}
+  .field textarea{resize:vertical;min-height:80px;}
+  .contact-form .btn{width:100%;justify-content:center;margin-top:6px;}
+  @media (max-width:900px){.contact-grid{grid-template-columns:1fr;gap:36px;}.contact-form{padding:24px 20px;}}
+  @media (max-width:560px){.form-row{grid-template-columns:1fr;}}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--blue-dark);color:rgba(255,255,255,0.65);}
+  .footer-top{
+    display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;
+    padding:76px 0 44px;border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .footer-logo .logo-mark{background:var(--gold);color:var(--blue-dark);}
+  .footer-logo .l1{color:#fff;font-size:17px;font-weight:700;}
+  .footer-logo .l2{color:rgba(255,255,255,0.55);font-size:11px;}
+  .footer-desc{font-size:13.5px;line-height:1.65;max-width:280px;color:rgba(255,255,255,0.5);}
+  .footer-col h4{color:#fff;font-size:12.5px;letter-spacing:0.04em;text-transform:uppercase;margin-bottom:16px;font-weight:700;}
+  .footer-col ul li{margin-bottom:10px;}
+  .footer-col a{font-size:13.5px;transition:color .2s;}
+  .footer-col a:hover{color:var(--gold-soft);}
+  .footer-bottom{padding:20px 0;display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:rgba(255,255,255,0.4);flex-wrap:wrap;gap:10px;}
+  @media (max-width:900px){.footer-top{grid-template-columns:1fr 1fr;row-gap:32px;}}
+  @media (max-width:560px){.footer-top{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="topbar">
+    <div class="container">
+      <div class="tb-left">
+        <a href="tel:+91999999999">📞 999999999</a>
+        <span>Vaishali Nagar, Jaipur, Rajasthan</span>
+      </div>
+      <a href="#admissions">Admissions Open — Session 2026–27</a>
+    </div>
+  </div>
+  <nav class="container">
+    <a href="#home" class="logo">
+      <span class="logo-mark">SP</span>
+      <span class="logo-text">
+        <span class="l1">Samrath Public School</span>
+        <span class="l2">Jaipur, Rajasthan</span>
+      </span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#campus">Campus</a></li>
+      <li><a href="#student-life">Activities</a></li>
+      <li><a href="#notices">Notice Board</a></li>
+      <li><a href="#admissions">Admissions</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="#admissions" class="btn btn-primary">Admission Enquiry</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#academics">Academics</a>
+  <a href="#campus">Campus</a>
+  <a href="#student-life">Activities</a>
+  <a href="#notices">Notice Board</a>
+  <a href="#admissions">Admissions</a>
+  <a href="#contact">Contact</a>
+  <a href="tel:+91999999999" class="mm-call">📞 999999999</a>
+  <a href="#admissions" class="btn btn-primary">Admission Enquiry</a>
+</div>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-eyebrow reveal">Samrath Public School</div>
+      <h1 class="reveal">A place to learn, grow<br>and <em>succeed</em>.</h1>
+      <p class="hero-desc reveal">Samrath Public School is committed to providing a balanced education that helps students grow academically, socially and personally. With a supportive learning environment, dedicated teachers and opportunities beyond the classroom, we encourage every student to learn with confidence and develop strong values for the future.</p>
+      <div class="hero-buttons reveal">
+        <a href="#about" class="btn btn-secondary">Explore School</a>
+        <a href="#admissions" class="btn btn-primary">Admission Enquiry</a>
+      </div>
+      <div class="hero-meta reveal">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>Vaishali Nagar, Jaipur</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v14.5"/><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H17"/></svg>CBSE, Nursery–XII</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg>1,500+ students</div>
+      </div>
+    </div>
+    <div class="photo-slot hero-photo reveal" data-caption="/images/school-campus.jpg">
+      <img src="/images/school-campus.jpg" alt="Samrath Public School campus building" loading="eager" onerror="this.classList.add('broken');this.parentElement.classList.add('missing');">
+    </div>
+  </div>
+</section>
+
+<section class="about section-pad" id="about">
+  <div class="container about-grid">
+    <div class="photo-slot about-photo reveal" data-caption="/images/classroom.jpg">
+      <img src="/images/classroom.jpg" alt="Students in a classroom at Samrath Public School" loading="lazy" onerror="this.classList.add('broken');this.parentElement.classList.add('missing');">
+    </div>
+    <div class="reveal">
+      <span class="eyebrow">About the School</span>
+      <h2>A school built on academics,<br>discipline and <em>support</em></h2>
+      <p>Samrath Public School has been teaching students in Jaipur since 1998. We follow the CBSE curriculum from Nursery through Grade XII, with class sizes kept small enough for <em>teachers to know each student individually</em>.</p>
+      <p>Our teachers focus on building strong academic foundations while also encouraging discipline, teamwork and confidence. Alongside regular classes, students take part in sports, arts and a range of clubs that run through the school year.</p>
+      <div class="about-points">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>CBSE-affiliated curriculum</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Experienced, qualified faculty</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Smart classrooms &amp; labs</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg>Sports &amp; co-curricular activities</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="principal section-pad tight" id="principal">
+  <div class="container principal-grid">
+    <div class="reveal">
+      <span class="eyebrow">Principal's Message</span>
+      <h2>A note to <em>parents and students</em></h2>
+      <p class="principal-msg">Every child who comes to Samrath is different, and our job is to help each one find their own strengths — in the classroom and outside it. We ask our teachers to <em>notice the small things</em>: who needs more time with a concept, who's ready to be pushed further, who's struggling with something they haven't said out loud. We believe good schooling is built on this kind of attention, not just good results. I welcome you to visit our campus and see this for yourself.</p>
+      <div class="principal-sig">
+        <div class="name">Mrs. Kavita Rathore</div>
+        <div class="role">Principal, Samrath Public School</div>
+      </div>
+    </div>
+    <div class="photo-slot principal-photo reveal" data-caption="/images/principal.jpg">
+      <img src="/images/principal.jpg" alt="Mrs. Kavita Rathore, Principal of Samrath Public School" loading="lazy" onerror="this.classList.add('broken');this.parentElement.classList.add('missing');">
+    </div>
+  </div>
+</section>
+
+<section class="why section-pad" id="why">
+  <div class="container">
+    <div class="why-head reveal">
+      <span class="eyebrow">Why Choose Samrath</span>
+      <h2>What parents tell us<br>matters most</h2>
+    </div>
+    <div class="why-list reveal">
+      <div class="why-item"><div class="n"></div><div><h3>Academic Foundation</h3><p>A structured curriculum with regular assessment, from Nursery through Grade XII.</p></div></div>
+      <div class="why-item"><div class="n"></div><div><h3>Experienced Faculty</h3><p>Teachers trained to work with students individually, not just in front of a class.</p></div></div>
+      <div class="why-item"><div class="n"></div><div><h3>Individual Attention</h3><p>Manageable class sizes so no student is left to fall behind quietly.</p></div></div>
+      <div class="why-item"><div class="n"></div><div><h3>Sports &amp; Activities</h3><p>Daily physical education plus a full calendar of inter-house competitions.</p></div></div>
+      <div class="why-item"><div class="n"></div><div><h3>Technology Enabled Learning</h3><p>Smart classrooms and computer labs used from the middle school years onward.</p></div></div>
+      <div class="why-item"><div class="n"></div><div><h3>Safe &amp; Supportive Campus</h3><p>CCTV-monitored premises, trained staff and a dedicated school nurse on site.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="academics section-pad" id="academics">
+  <div class="container">
+    <div class="academics-head reveal">
+      <span class="eyebrow">Academics</span>
+      <h2>Academic <em>programme</em></h2>
+      <p>Our curriculum is organised into four stages, each building on the skills developed in the one before it.</p>
+    </div>
+    <div class="academic-rows reveal">
+      <div class="academic-row">
+        <div><div class="stage-range">Nursery – KG</div><h3>Pre-Primary</h3></div>
+        <p>Play-based learning focused on language, motor skills and early number sense.</p>
+        <a href="#contact">Enquire <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="academic-row">
+        <div><div class="stage-range">Grade I – V</div><h3>Primary School</h3></div>
+        <p>Core subjects taught through activity-based learning, with weekly assessment.</p>
+        <a href="#contact">Enquire <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="academic-row">
+        <div><div class="stage-range">Grade VI – VIII</div><h3>Middle School</h3></div>
+        <p>Subject specialisation begins, along with introductory computer science.</p>
+        <a href="#contact">Enquire <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="academic-row">
+        <div><div class="stage-range">Grade IX – XII</div><h3>Senior School</h3></div>
+        <p>Board exam preparation with Science, Commerce and Humanities streams.</p>
+        <a href="#contact">Enquire <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="campus section-pad large" id="campus">
+  <div class="container">
+    <div class="campus-head reveal">
+      <div>
+        <span class="eyebrow">Our Campus</span>
+        <h2>A campus built for daily use,<br>not just <em>photographs</em></h2>
+      </div>
+      <p>Six blocks across our Vaishali Nagar campus, connected by covered walkways.</p>
+    </div>
+    <div class="campus-gallery reveal">
+      <div class="photo-slot campus-photo g1" data-caption="/images/school-building.jpg">
+        <img src="/images/school-building.jpg" alt="Samrath Public School main building" loading="lazy" onerror="this.classList.add('broken');this.parentElement.classList.add('missing');">
+        <div class="cap">School Building</div>
+      </div>
+      <div class="photo-slot campus-photo g2" data-caption="/images/smart-classroom.jpg">
+        <img src="/images/smart-classroom.jpg" alt="Smart classroom with digital learning tools" loading="lazy" onerror="this.classList.add('broken');this.parentElement.classList.add('missing');">
+        <div class="cap">Smart Classrooms</div>
+      </div>
+      <div class="photo-slot campus-photo g3" data-caption="/images/library.jpg">
+        <img src="/images/library.jpg" alt="School library reading hall" loading="lazy" onerror="this.classList.add('broken');this.parentElement.classList.add('missing');">
+        <div class="cap">Library</div>
+      </div>
+      <div class="photo-slot campus-photo g4" data-caption="/images/science-lab.jpg">
+        <img src="/images/science-lab.jpg" alt="Science laboratory" loading="lazy" onerror="this.classList.add('broken');this.parentElement.classList.add('missing');">
+        <div class="cap">Science Lab</div>
+      </div>
+      <div class="photo-slot campus-photo g5" data-caption="/images/computer-lab.jpg">
+        <img src="/images/computer-lab.jpg" alt="Computer lab" loading="lazy" onerror="this.classList.add('broken');this.parentElement.classList.add('missing');">
+        <div class="cap">Computer Lab</div>
+      </div>
+      <div class="photo-slot campus-photo g6" data-caption="/images/sports-ground.jpg">
+        <img src="/images/sports-ground.jpg" alt="School sports ground" loading="lazy" onerror="this.classList.add('broken');this.parentElement.classList.add('missing');">
+        <div class="cap">Sports Ground</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="student-life section-pad" id="student-life">
+  <div class="container">
+    <div class="sl-head reveal">
+      <span class="eyebrow">Student Life</span>
+      <h2>Learning doesn't stop<br>at the <em>classroom door</em></h2>
+    </div>
+    <div class="sl-grid reveal">
+      <div class="sl-card">
+        <div class="photo-slot" data-caption="/images/sports.jpg"><img src="/images/sports.jpg" alt="Students playing sports" loading="lazy" onerror="this.classList.add('broken');this.parentElement.classList.add('missing');"></div>
+        <h3>Sports</h3>
+      </div>
+      <div class="sl-card">
+        <div class="photo-slot" data-caption="/images/arts-culture.jpg"><img src="/images/arts-culture.jpg" alt="Students at a cultural performance" loading="lazy" onerror="this.classList.add('broken');this.parentElement.classList.add('missing');"></div>
+        <h3>Arts &amp; Culture</h3>
+      </div>
+      <div class="sl-card">
+        <div class="photo-slot" data-caption="/images/clubs.jpg"><img src="/images/clubs.jpg" alt="Students in a school club" loading="lazy" onerror="this.classList.add('broken');this.parentElement.classList.add('missing');"></div>
+        <h3>Clubs</h3>
+      </div>
+      <div class="sl-card">
+        <div class="photo-slot" data-caption="/images/competitions.jpg"><img src="/images/competitions.jpg" alt="Students at an inter-school competition" loading="lazy" onerror="this.classList.add('broken');this.parentElement.classList.add('missing');"></div>
+        <h3>Competitions</h3>
+      </div>
+      <div class="sl-card">
+        <div class="photo-slot" data-caption="/images/educational-visits.jpg"><img src="/images/educational-visits.jpg" alt="Students on an educational visit" loading="lazy" onerror="this.classList.add('broken');this.parentElement.classList.add('missing');"></div>
+        <h3>Educational Visits</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="notices section-pad tight" id="notices">
+  <div class="container">
+    <div class="notice-panel reveal">
+      <div class="notice-head">
+        <h2>Latest Notices</h2>
+        <a href="#" class="view-all">View All Notices <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+      <div class="notice-list">
+        <div class="notice-item">
+          <div class="notice-date"><span class="day">08</span>Aug</div>
+          <div><h3>Admission Enquiry Information</h3><p>Details on eligibility and the enquiry process for session 2026–27.</p></div>
+        </div>
+        <div class="notice-item">
+          <div class="notice-date"><span class="day">05</span>Aug</div>
+          <div><h3>Parent Orientation Programme</h3><p>Introductory session for parents of new admissions.</p></div>
+        </div>
+        <div class="notice-item">
+          <div class="notice-date"><span class="day">02</span>Aug</div>
+          <div><h3>Annual Sports Meet</h3><p>Inter-house athletics concludes with the prize distribution ceremony.</p></div>
+        </div>
+        <div class="notice-item">
+          <div class="notice-date"><span class="day">30</span>Jul</div>
+          <div><h3>Science Exhibition</h3><p>Grades VI–XII present projects to visiting judges.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="glance section-pad tight" id="glance">
+  <div class="container">
+    <span class="eyebrow reveal">At a Glance</span>
+    <p class="glance-note reveal">Sample figures shown for template purposes.</p>
+    <div class="glance-grid reveal">
+      <div class="glance-item"><div class="num" data-count="25">0</div><div class="label">Years</div></div>
+      <div class="glance-item"><div class="num" data-count="1500">0</div><div class="label">Students</div></div>
+      <div class="glance-item"><div class="num" data-count="80">0</div><div class="label">Faculty</div></div>
+      <div class="glance-item"><div class="num" data-count="95" data-suffix="%">0</div><div class="label">Academic Success</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="admissions section-pad large" id="admissions">
+  <div class="container adm-grid">
+    <div class="reveal">
+      <span class="eyebrow">Admissions</span>
+      <h2><em>Admissions Open</em><br>Session 2026–27</h2>
+      <p>Contact the school to learn about admission availability, eligibility and the admission process.</p>
+      <div class="adm-buttons">
+        <a href="#contact" class="btn" style="background:var(--gold);color:#fff;border:1px solid var(--gold);">Admission Enquiry</a>
+        <a href="tel:+91999999999" class="btn btn-ghost-light">Call 999999999</a>
+      </div>
+    </div>
+    <div class="adm-steps reveal">
+      <div class="adm-step"><div class="n">01</div><div><h4>Enquiry</h4><p>Share your child's details through the form below or by phone.</p></div></div>
+      <div class="adm-step"><div class="n">02</div><div><h4>School Visit</h4><p>Visit the campus and meet faculty at a scheduled time.</p></div></div>
+      <div class="adm-step"><div class="n">03</div><div><h4>Admission</h4><p>Complete the admission formalities to confirm the seat.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials section-pad" id="testimonials">
+  <div class="container">
+    <div class="testi-head reveal">
+      <span class="eyebrow">What Parents Say</span>
+      <h2>Feedback from <em>our school community</em></h2>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="testi-card">
+        <p>We appreciate the teachers' attention and the opportunities provided to students beyond academics.</p>
+        <div class="testi-attr">— Parent, Grade VIII</div>
+      </div>
+      <div class="testi-card">
+        <p>The school keeps us informed regularly, and our daughter looks forward to going every day.</p>
+        <div class="testi-attr">— Parent, Grade IV</div>
+      </div>
+      <div class="testi-card">
+        <p>I've been able to try things here I wasn't sure I'd be good at — the debate club especially.</p>
+        <div class="testi-attr">— Student, Grade XI</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact section-pad" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Contact</span>
+      <h2>Samrath Public School</h2>
+      <div class="contact-block"><div class="lbl">Address</div><div class="val">Vaishali Nagar, Jaipur, Rajasthan</div></div>
+      <div class="contact-block"><div class="lbl">Phone</div><a class="val" href="tel:+91999999999">999999999</a></div>
+      <div class="contact-block"><div class="lbl">Email</div><a class="val" href="mailto:info@samrathschool.example">info@samrathschool.example</a></div>
+      <div class="contact-block"><div class="lbl">Office Hours</div><div class="val">Mon–Sat, 8:00 AM – 3:00 PM</div></div>
+    </div>
+    <div class="contact-form reveal">
+      <form onsubmit="event.preventDefault(); alert('Thank you. Our admissions team will contact you shortly.'); this.reset();">
+        <div class="form-row">
+          <div class="field"><label for="parentName">Name</label><input type="text" id="parentName" required></div>
+          <div class="field"><label for="phoneNum">Phone</label><input type="tel" id="phoneNum" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field full">
+            <label for="classFor">Class</label>
+            <select id="classFor" required>
+              <option value="">Select Class</option>
+              <option>Nursery</option>
+              <option>Grade I – V</option>
+              <option>Grade VI – VIII</option>
+              <option>Grade IX – X</option>
+              <option>Grade XI – XII</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field full"><label for="msg">Message</label><textarea id="msg" placeholder="Tell us a little about your enquiry"></textarea></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Enquiry</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <span class="logo-mark">SP</span>
+          <span class="logo-text"><span class="l1">Samrath Public School</span><span class="l2">Jaipur, Rajasthan</span></span>
+        </div>
+        <p class="footer-desc">A CBSE school in Vaishali Nagar, Jaipur, teaching Nursery to Grade XII since 1998.</p>
+      </div>
+      <div class="footer-col">
+        <h4>School</h4>
+        <ul><li><a href="#about">About</a></li><li><a href="#academics">Academics</a></li><li><a href="#campus">Campus</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Admissions</h4>
+        <ul><li><a href="#admissions">Process</a></li><li><a href="#notices">Notice Board</a></li><li><a href="#contact">Contact</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul><li>Vaishali Nagar, Jaipur</li><li>999999999</li><li>info@samrathschool.example</li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Samrath Public School</div>
+      <div>Jaipur, Rajasthan</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+
+  const counters = document.querySelectorAll('.glance-item .num');
+  const counterIO = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        const suffix = el.dataset.suffix || '+';
+        const duration = 700;
+        const start = performance.now();
+        function tick(now){
+          const progress = Math.min((now - start) / duration, 1);
+          el.textContent = Math.round(progress * target) + suffix;
+          if (progress < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        counterIO.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+  counters.forEach(el => counterIO.observe(el));
+</script>
+</body>
+</html>
